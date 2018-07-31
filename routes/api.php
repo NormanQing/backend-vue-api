@@ -11,6 +11,8 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version(['v1', 'v2'], function ($api) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'v1.php';
 });
