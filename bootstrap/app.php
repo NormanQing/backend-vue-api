@@ -23,9 +23,12 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+$app->withFacades();
 
-// $app->withEloquent();
+/**
+ * 使用 Eloquent ORM必须开启
+ */
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
