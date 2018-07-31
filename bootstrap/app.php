@@ -96,6 +96,23 @@ $app->singleton(
 |
 */
 
+/*
+ * 注册dingo api 服务
+ */
+$app->register(Dingo\Api\Provider\LumenServiceProvider::class);
+
+/**
+ * 配置响应构建器
+ */
+$app['Dingo\Api\Transformer\Factory']->setAdapter(function ($app) {
+    $fractal = new League\Fractal\Manager;
+
+    // 自定义响应数据
+    $serializer = new App\Serializers\NoDataArraySerializer();
+    $fractal->setSerializer($serializer);
+    return new Dingo\Api\Transformer\Adapter\Fractal($fractal);
+});
+
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
