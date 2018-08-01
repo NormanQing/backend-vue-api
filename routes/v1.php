@@ -6,4 +6,5 @@ $api->group([
 ], function($app){
 	//test
 	$app->get('test', 'TestController@index');
+	$app->get('test/{id}', 'TestController@show');
 });

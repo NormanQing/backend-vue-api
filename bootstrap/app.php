@@ -102,6 +102,11 @@ $app->singleton(
 $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 
 /**
+ * 注册命令行包
+ */
+$app->register(Wn\Generators\CommandsServiceProvider::class);
+
+/**
  * 配置响应构建器
  */
 $app['Dingo\Api\Transformer\Factory']->setAdapter(function ($app) {
