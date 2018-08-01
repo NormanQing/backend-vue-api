@@ -96,6 +96,13 @@ $app->singleton(
 |
 */
 
+/**
+ * 注册全局中间件
+ */
+$app->middleware([
+    \App\Http\Middleware\CORSMiddleware::class, // 跨域处理
+]);
+
 /*
  * 注册dingo api 服务
  */

@@ -229,5 +229,23 @@ return [
         ],
 
     ],
+	
+	// 接口访问白名单
+    'allowOrigin' => [
+        'http://localhost:8080',
+        'http://127.0.0.1:8080'
+    ],
+	
+	// 跨域配置
+    'allowOriginHeader' => [
+        'Access-Control-Allow-Origin' => '*',
+        'Access-Control-Expose-Headers' => 'Authorization',
+        'Access-Control-Allow-Methods'=> 'POST, GET, OPTIONS, PUT, DELETE',
+        'Access-Control-Allow-Headers'=> 'Content-Type, Authorization, Origin',
+        'Expires' =>'Mon, 26 Jul 1997 05:00:00 GMT',
+        'Last-Modified'=> gmdate("D, d M Y H:i:s") . " GMT",
+        'Cache-Control' => 'no-cache, must-revalidate',
+        'Pragma' => 'no-cache',
+    ]
 
 ];
