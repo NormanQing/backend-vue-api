@@ -14,6 +14,5 @@
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version(['v1', 'v2'], function ($api) {
-	echo 999;die;
     require __DIR__ . DIRECTORY_SEPARATOR . 'v1.php';
 });
