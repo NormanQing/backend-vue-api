@@ -13,8 +13,8 @@ class TestTransformer extends TransformerAbstract
   				"id" => $test->id,
   				"user" => $test->user,
   				"email" => $test->email,
-  				"sex" => $test->sex,
-  				"hoby" => $test->hoby,
+  				"sex" => $test->sex == 'f' ? '女' : '男',
+  				"hoby" => explode(',',$test->hoby),
   				"status" => $test->status,
   				"created_at" => $test->created_at->format("Y-m-d H:i:s"),
   				"updated_at" => $test->updated_at->format("Y-m-d H:i:s")
